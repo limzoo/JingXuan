@@ -10,4 +10,5 @@
 
 @interface UILabel (Ly)
 + (UILabel *)initWithSystemFontOfSize:(CGFloat)size  color:(UIColor *)color text:(NSString *)text;
++ (UILabel *)initWithCustomFontOfSize:(UIFont *)font  color:(UIColor *)color text:(NSString *)text;
 @end

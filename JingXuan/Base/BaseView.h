@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseView : UIView
+@property (nonatomic, weak) UIViewController *myViewController;
+
 - (void)configInitial;
 - (void)createSubview;
 @end

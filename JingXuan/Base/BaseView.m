@@ -8,7 +8,6 @@
 
 #import "BaseView.h"
 @interface BaseView()
-@property (nonatomic, weak) UIViewController *myViewController;
 @end
 @implementation BaseView
 
@@ -21,4 +20,11 @@
     return self;
 }
 
+- (void)configInitial{
+    
+}
+
+- (void)createSubview{
+    
+}
 @end

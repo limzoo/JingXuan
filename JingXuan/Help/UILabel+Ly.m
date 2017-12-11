@@ -16,4 +16,11 @@
     label.textColor = color;
     return label;
 }
++ (UILabel *)initWithCustomFontOfSize:(UIFont *)font  color:(UIColor *)color text:(NSString *)text{
+    UILabel *label = [[UILabel alloc] init];
+    label.text = text;
+    label.font = font;
+    label.textColor = color;
+    return label;
+}
 @end

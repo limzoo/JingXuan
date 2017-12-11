@@ -17,5 +17,10 @@
     }
     return self;
 }
-
+- (void)configInitial{
+    
+}
+- (void)createSubview{
+    
+}
 @end

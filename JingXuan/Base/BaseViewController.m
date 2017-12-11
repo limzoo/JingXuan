@@ -7,7 +7,8 @@
 //
 
 #import "BaseViewController.h"
-
+#import "BaseView.h"
+#import <objc/runtime.h>
 @interface BaseViewController ()
 
 @end
@@ -15,17 +16,38 @@
 @implementation BaseViewController
 - (void)setView:(UIView *)view{
     [super setView:view];
-    [view setValue:self forKey:@"myViewController"];
+    if ([view isKindOfClass:[BaseView class]]) {
+        ((BaseView *)view).myViewController = self;
+    }
+
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//- (BOOL)object:(id)object hasPropertyNamed:(NSString *)objectName {
+//    unsigned int methodCount = 0;
+//    Ivar * ivars = class_copyIvarList([object class], &methodCount);
+//    for (unsigned int i = 0; i < methodCount; i ++) {
+//        Ivar ivar = ivars[i];
+//        const char * name = ivar_getName(ivar);
+//        NSString *nameStr = [NSString stringWithFormat:@"%s",name];
+//        NSLog(@"%@",nameStr);
+//        if ([nameStr isEqualToString:objectName]) {
+//            return YES;
+//        }
+//    }
+//    free(ivars);
+//    return NO;
+//}
+
 
 /*
 #pragma mark - Navigation

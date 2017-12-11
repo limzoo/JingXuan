@@ -7,13 +7,19 @@
 //
 
 #import "MineViewController.h"
-
+#import "MineView.h"
 @interface MineViewController ()
 
 @end
 
 @implementation MineViewController
-
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.view = [[MineView alloc] initWithFrame:self.view.frame];
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

@@ -27,5 +27,10 @@
 
     // Configure the view for the selected state
 }
-
+- (void)configInitial{
+    
+}
+- (void)createSubview{
+    
+}
 @end

@@ -7,17 +7,28 @@
 //
 
 #import "HomepageViewController.h"
-
+#import "HompageView.h"
 @interface HomepageViewController ()
-
+@property (nonatomic, strong) UISearchBar *searchBar;
 @end
 
 @implementation HomepageViewController
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        HompageView *view = [[HompageView alloc] initWithFrame:self.view.frame];
+        self.view = view;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBar.hidden = YES;
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -7,16 +7,24 @@
 //
 
 #import "ShopCartViewController.h"
-
+#import "ShopCartView.h"
 @interface ShopCartViewController ()
 
 @end
 
 @implementation ShopCartViewController
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.view = [[ShopCartView alloc] initWithFrame:self.view.frame];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"购物车";
 }
 
 - (void)didReceiveMemoryWarning {

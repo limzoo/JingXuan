@@ -7,13 +7,19 @@
 //
 
 #import "TypePageViewController.h"
-
+#import "TypePageView.h"
 @interface TypePageViewController ()
 
 @end
 
 @implementation TypePageViewController
-
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.view = [[TypePageView alloc] initWithFrame:self.view.frame];
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

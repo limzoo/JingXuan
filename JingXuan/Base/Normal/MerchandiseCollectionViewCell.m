@@ -16,7 +16,10 @@
 @end
 @implementation MerchandiseCollectionViewCell
 - (void)createSubview{
+    self.backgroundColor = [UIColor whiteColor];
+    
     self.merchandiseImgView = [[UIImageView alloc] init];
+    self.merchandiseImgView.backgroundColor = [UIColor grayColor];
     self.merchandiseImgView.image;
     [self.contentView addSubview:self.merchandiseImgView];
     [self.merchandiseImgView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -35,15 +38,16 @@
         make.width.mas_equalTo(CUSTOM_WIDTH(38));
     }];
     
-    self.merchandiseTitleLabel = [UILabel initWithSystemFontOfSize:14 color:TITLECOLOR text:@""];
+    self.merchandiseTitleLabel = [UILabel initWithSystemFontOfSize:14 color:TITLECOLOR text:@"标题"];
+    self.merchandiseTitleLabel.textAlignment = NSTextAlignmentLeft;
     [self.contentView addSubview:self.merchandiseTitleLabel];
     [self.merchandiseTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.mas_equalTo(self.contentView).offset(CUSTOM_WIDTH(14));
         make.trailing.mas_equalTo(self.contentView).offset(-CUSTOM_WIDTH(6));
-        make.top.mas_equalTo(self.contentView.mas_bottom).offset(12);
+        make.top.mas_equalTo(self.merchandiseImgView.mas_bottom).offset(12);
     }];
     
-    self.merchandiseDetailLabel = [UILabel initWithSystemFontOfSize:12 color:COLOR_RGB16(0x999999) text:@""];
+    self.merchandiseDetailLabel = [UILabel initWithSystemFontOfSize:12 color:COLOR_RGB16(0x999999) text:@"细节"];
     [self.contentView addSubview:self.merchandiseDetailLabel];
     [self.merchandiseDetailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.mas_equalTo(self.contentView).offset(CUSTOM_WIDTH(14));

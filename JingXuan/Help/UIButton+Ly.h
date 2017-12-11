@@ -10,5 +10,5 @@
 
 @interface UIButton (Ly)
 + (UIButton *)initSystemTypeButtonWithTextColor:(UIColor *)textColor backGroudColor:(UIColor *)backColor cornerRadius:(CGFloat)radius title:(NSString *)title;
-+ (UIButton *)initCustomTypeButtonWithTextColor:(UIColor *)textColor backGroudColor:(UIColor *)backColor cornerRadius:(CGFloat)radius title:(NSString *)title;
++ (UIButton *)initCustomTypeButtonWithTextColor:(UIColor *)textColor backGroudColor:(UIColor *)backColor cornerRadius:(CGFloat)radius fontSize:(CGFloat)fontSize title:(NSString *)title;
 @end
